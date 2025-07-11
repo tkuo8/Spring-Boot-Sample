@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!--共通CSS読込-->
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+<!--    共通JS読込-->
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}" defer></script>
+    <meta charset="UTF-8">
+    <title>Error</title>
+</head>
+
+<body>
+    <h1 th:text="${status} + '' + ${error}"></h1>
+    <p th:text="${message}"></p>
+    <p>ログイン画面に戻ってください</p>
+    <form method="post" th:action="@{/logout}">
+        <button class="btn btn-link" type="submit">
+            ログイン画面に戻る
+        </button>
+    </form>
+</body>
+
+</html>
